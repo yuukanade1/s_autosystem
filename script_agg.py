@@ -14,10 +14,14 @@ maxRow = ws.max_row
 print('maxcolumn : ' + str(maxClm))
 print('maxrow    : ' + str(maxRow))
 
-order = []
-for clm in range(2, maxClm + 1, 1):
-    for row in reversed(range(1,maxRow + 1)):
-        if ws.cell(row, clm).value != None:
-            print(str(clm) + '列の最終行 : ' + str(row))
+for j in range(2, maxClm + 1):
+    for i in reversed(range(1,maxRow + 1)):
+        if ws.cell(i, j).value != None:
+            for row in ws.iter_cols(min_row=1, max_row=i, min_col=2, max_col=j):
+                values = []
+                for clm in row:
+                    values.append(clm.value)
+            print(str(j) + '列の最終行 : ' + str(i))
+            print(values)
             break
 
