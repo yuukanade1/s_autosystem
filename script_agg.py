@@ -3,10 +3,13 @@ import time
 import openpyxl
 import datetime
 import subprocess
+import win32gui
 from tkinter import messagebox
-# excelbookパス C:\Users\竜馬\OneDrive\share\集計転記\syuukeiin.xlsx
 
-pg.hotkey('winleft', '1') # 集計ソフトを立ち上げる(現時点ではメモ帳で代用)
+subprocess.Popen(r'C:\Windows\notepad.exe')
+memoapp = win32gui.FindWindow(None, '無題 - メモ帳')
+time.sleep(1)
+win32gui.SetForegroundWindow(memoapp) # エラーあり
 
 dt_now = datetime.datetime.now()
 print(dt_now.strftime('%Y%m%d'))
