@@ -9,7 +9,7 @@ import win32api
 import pyperclip
 from tkinter import messagebox
 
-# subprocess.Popen(r'C:\Windows\notepad.exe')
+subprocess.Popen(r'C:\Windows\notepad.exe')
 time.sleep(2)
 def foreground():
     # hwnd = win32gui.FindWindow(None, '受注情報登録（ベルト）')
@@ -26,7 +26,8 @@ if __name__ == '__main__':
 dt_now = datetime.datetime.now()
 print(dt_now.strftime('%Y%m%d'))
 
-wb = openpyxl.load_workbook(r'C:\Users\stock\OneDrive\share\集計転記\syuukeiin.xlsx')
+# wb = openpyxl.load_workbook(r'C:\Users\stock\OneDrive\share\集計転記\syuukeiin.xlsx')
+wb = openpyxl.load_workbook(r'C:\Users\竜馬\OneDrive\share\集計転記\syuukeiin.xlsx')
 ws = wb.worksheets[0]
 maxClm = ws.max_column
 maxRow = ws.max_row
