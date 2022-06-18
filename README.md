@@ -1,2 +1,2 @@
 # s_autosystem
-for python
+for python & ps1
